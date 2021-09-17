@@ -1,0 +1,107 @@
+body{
+    background:url(Wallpaper.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.container{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 500px;
+    transform-style: preserve-3d;
+    height: 100vh;
+}
+.container .form{
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgb(50,50,50,.5);
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    animation: animate 3s linear infinite alternate;
+    transition-duration: .5s;
+    margin: 0 10px;
+}
+.container .form:hover{
+    box-sizing: border-box;
+    animation: after 3s linear;
+    height: 450px;
+    width: 350px;
+    box-shadow: 0 0 15px 0 black;
+    border-radius: 5px;
+    transform:rotateX(0deg);
+    background: rgb(0,0,0,.2);
+}
+.container .form:hover .content{
+    border: none;
+}
+@keyframes animate{
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform:rotateX(80deg);
+    }
+}
+@keyframes after{
+    from{
+        transform:rotateX(360deg);
+    }
+    to{
+        transform: rotateX(0deg);
+    }
+}
+.container .form .content{
+    height: 130px;
+    width: 130px;
+    line-height: 130px;
+    position:relative;
+    margin: 35px auto;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    transform:translateZ(25px);
+}
+.container .form .content .layer{
+    font-size: 30px;
+    color:chocolate;
+    font-family: Arial;
+    font-weight: 800;
+}
+.container .form:hover .content{
+    margin:0 auto;
+    transform: translateZ(50px);
+}
+.container .form .content .layer .form-content > input{
+    display: none;
+    margin: 0 0 30px 0;
+    width: 100%;
+    transition-delay: .5s;
+}
+.container .form:hover .content .layer .form-content > input{
+    display:block;
+    filter:blur(0px);
+}
+.text{
+    outline: none;
+    background: transparent;
+    border:none;
+    border-bottom: 1px solid #fff;
+    color:#fff;
+    padding:10px;
+}
+.btn{
+    padding: 10px 15px;
+    color:#fff;
+    background: dodgerblue;
+    border: 1px solid dodgerblue;
+    border-radius: 50px;
+}
+.btn:hover{
+    cursor: pointer;
+    background:transparent;
+    border: 1px solid dodgerblue;
+}
+.text:focus{
+    border-bottom:1px solid dodgerblue ;
+}
